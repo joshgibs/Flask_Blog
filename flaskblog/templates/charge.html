@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Thanks!</h2>
+  <p>You just payed {{ amount }} for premium content! Click <a href="{{ url_for('main.home')}}">here</a> to return to the home page.</p>
+{% endblock %}
