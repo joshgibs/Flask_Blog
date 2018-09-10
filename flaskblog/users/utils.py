@@ -23,12 +23,12 @@ def save_picture(form_picture):
 def send_reset_email(user):
     token = user.get_reset_token()
     msg = Message('Password Reset Requested for Sonocare',
-                  sender='joshgibson82@gmail.com', recipients=[user.email])
+                  sender=current_app.config['MAIL_USERNAME'], recipients=[user.email])
 
     msg.body = f'''To reset your password, visit the following link:
-{url_for('reset_token', token=token, _external=True)}
+    {url_for('users.reset_token', token=token, _external=True)}
 
-If you did not make this request, please ignore this email. 
-'''
+    If you did not make this request, please ignore this email. 
+    '''
     mail.connect()
     mail.send(msg)

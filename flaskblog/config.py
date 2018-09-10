@@ -9,5 +9,4 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get('EMAIL_USER')
     MAIL_PASSWORD = os.environ.get('EMAIL_PASS')
-    STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUB_KEY')
-    STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+    SERVER_NAME = "thegibsonfamily.info"

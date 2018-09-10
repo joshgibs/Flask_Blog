@@ -20,7 +20,6 @@ class User(db.Model, UserMixin):
 
     def get_reset_token(self, expires_sec=1800):
         s = Serializer(current_app.config['SECRET_KEY'], expires_sec)
-
         return s.dumps({'user_id': self.id}).decode('utf-8')
 
     @staticmethod
@@ -46,3 +45,4 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
+
